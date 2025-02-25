@@ -1,0 +1,526 @@
+<html>
+<head>
+<title>TestNG:  Claim Referral Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Claim Referral Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>54/2/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Feb 24 19:32:45 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>3169 seconds (3169130 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Email valid under both company and person", "Claim Intelligence Creation"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class=&apos;p-dialog-header-close-icon ng-tns-c106-12 pi pi-times&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.24&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\NIVETH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52276}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52276/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5ef970c3e9109ca3df43816de37dd09f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.stepdefinitions.CreateInvestigationNegative.verifyEmailFieldsUnderCompanyandPerson(CreateInvestigationNegative.java:3742)
+	at ?.I verify the Email Field under company and person(file:///C:/Users/NivethaElamaran/eclipse-workspace/ZodiacAutomation/src/test/resources/features/create_intelligence_negative.feature:528)
+</pre></div><a href='#' onClick='toggleBox("stack-trace666891231", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace666891231'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class=&apos;p-dialog-header-close-icon ng-tns-c106-12 pi pi-times&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.24&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\NIVETH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52276}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52276/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5ef970c3e9109ca3df43816de37dd09f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.stepdefinitions.CreateInvestigationNegative.verifyEmailFieldsUnderCompanyandPerson(CreateInvestigationNegative.java:3742)
+	at ?.I verify the Email Field under company and person(file:///C:/Users/NivethaElamaran/eclipse-workspace/ZodiacAutomation/src/test/resources/features/create_intelligence_negative.feature:528)
+</pre></div></td>
+<td>44</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Phone Number Validation under both company and person", "Claim Intelligence Creation"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.24&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [539883059b2b22cd21c6877b0d48bcf1, get {url=https://app-zodiac-test.azurewebsites.net/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\NIVETH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52623}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52623/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 539883059b2b22cd21c6877b0d48bcf1
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:65)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:48)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:96)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
+	at com.stepdefinitions.CreateInvestigationNegative.i_am_on_the_zodiac_login_page_for_create_intelligence_tc(CreateInvestigationNegative.java:48)
+	at ?.I am on the Zodiac login page for Create Intelligence TC(file:///C:/Users/NivethaElamaran/eclipse-workspace/ZodiacAutomation/src/test/resources/features/create_intelligence_negative.feature:598)
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1888)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2023)
+	at org.asynchttpclient.netty.NettyResponseFuture.get(NettyResponseFuture.java:206)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:59)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:48)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:96)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
+	at com.stepdefinitions.CreateInvestigationNegative.i_am_on_the_zodiac_login_page_for_create_intelligence_tc(CreateInvestigationNegative.java:48)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace513622758", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace513622758'><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.24&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [539883059b2b22cd21c6877b0d48bcf1, get {url=https://app-zodiac-test.azurewebsites.net/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\NIVETH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52623}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52623/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 539883059b2b22cd21c6877b0d48bcf1
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:65)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:48)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:96)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
+	at com.stepdefinitions.CreateInvestigationNegative.i_am_on_the_zodiac_login_page_for_create_intelligence_tc(CreateInvestigationNegative.java:48)
+	at ?.I am on the Zodiac login page for Create Intelligence TC(file:///C:/Users/NivethaElamaran/eclipse-workspace/ZodiacAutomation/src/test/resources/features/create_intelligence_negative.feature:598)
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1888)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2023)
+	at org.asynchttpclient.netty.NettyResponseFuture.get(NettyResponseFuture.java:206)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:59)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:48)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:96)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
+	at com.stepdefinitions.CreateInvestigationNegative.i_am_on_the_zodiac_login_page_for_create_intelligence_tc(CreateInvestigationNegative.java:48)
+	at jdk.internal.reflect.GeneratedMethodAccessor91.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at jdk.internal.reflect.GeneratedMethodAccessor82.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>181</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify "Save" button instead of "Cancel"", "Claim Intelligence Creation"</td>
+<td></td>
+<td>37</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person Vechile fileds", "Claim Intelligence Creation"</td>
+<td></td>
+<td>31</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the delete functionality of a form", "Claim Intelligence Creation"</td>
+<td></td>
+<td>88</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the alert YES option under person", "Claim Intelligence Creation"</td>
+<td></td>
+<td>51</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person fileds", "Claim Intelligence Creation"</td>
+<td></td>
+<td>40</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Edit the form after submission", "Claim Intelligence Creation"</td>
+<td></td>
+<td>105</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the ip validation", "Claim Intelligence Creation"</td>
+<td></td>
+<td>37</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with phone details alone under personal record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>74</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person fileds", "Claim Intelligence Creation"</td>
+<td></td>
+<td>31</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Date validation", "Claim Intelligence Creation"</td>
+<td></td>
+<td>34</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person phone number filed", "Claim Intelligence Creation"</td>
+<td></td>
+<td>41</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with Bank Details alone under company record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>69</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Operation Name filter functionality", "Claim Intelligence Creation"</td>
+<td></td>
+<td>57</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify "Dissolution First Gazette" in Company Status", "Claim Intelligence Creation"</td>
+<td></td>
+<td>98</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person fileds", "Claim Intelligence Creation"</td>
+<td></td>
+<td>27</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify "Designation" options now appear under "Party Type"", "Claim Intelligence Creation"</td>
+<td></td>
+<td>57</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successfully delete a record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>53</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify "Personnel Information" appears above "Address" in saved entry", "Claim Intelligence Creation"</td>
+<td></td>
+<td>73</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with Address details alone under company record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>61</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the POSTAL Code validation", "Claim Intelligence Creation"</td>
+<td></td>
+<td>39</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the alert No option under company", "Claim Intelligence Creation"</td>
+<td></td>
+<td>44</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Intel Source filter functionality", "Claim Intelligence Creation"</td>
+<td></td>
+<td>77</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with Vehicle  Details alone under company record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>70</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify size of "Companies and Persons Involved" section is readable", "Claim Intelligence Creation"</td>
+<td></td>
+<td>104</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person Bank fileds", "Claim Intelligence Creation"</td>
+<td></td>
+<td>87</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Intel Source filter functionality for Adhoc Owner", "Claim Intelligence Creation"</td>
+<td></td>
+<td>55</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person fileds", "Claim Intelligence Creation"</td>
+<td></td>
+<td>24</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify "Informant" is listed as an option under "Party Type"", "Claim Intelligence Creation"</td>
+<td></td>
+<td>29</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runCucumberTests()'><b>runCucumberTests</b><br>Test class: com.runners.TestRunner</td>
+<td></td>
+<td>0</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with Address details alone under personal record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>71</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person Address fileds", "Claim Intelligence Creation"</td>
+<td></td>
+<td>48</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with Vehicle details alone under personal record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>62</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Linked Organization Tab enable", "Claim Intelligence Creation"</td>
+<td></td>
+<td>25</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person IP filed", "Claim Intelligence Creation"</td>
+<td></td>
+<td>34</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with IP details alone under personal record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>60</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with Website alone under company record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>71</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the alert No option under person", "Claim Intelligence Creation"</td>
+<td></td>
+<td>42</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with Email details alone under personal record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>70</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify submit button is disabled until Intelligence Source is selected", "Claim Intelligence Creation"</td>
+<td></td>
+<td>45</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with Bank details alone under personal record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>60</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Adhoc Owner filter functionality", "Claim Intelligence Creation"</td>
+<td></td>
+<td>51</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Adhoc Owner filter functionality", "Claim Intelligence Creation"</td>
+<td></td>
+<td>61</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Invalid NIN number", "Claim Intelligence Creation"</td>
+<td></td>
+<td>62</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Change the owner name", "Claim Intelligence Creation"</td>
+<td></td>
+<td>95</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the edit functionlity from Intel Source filter functionality", "Claim Intelligence Creation"</td>
+<td></td>
+<td>43</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the ip validation", "Claim Intelligence Creation"</td>
+<td></td>
+<td>39</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with Email alone under company record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>66</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Intel Source filter functionality in My Sructured Intelligence Page", "Claim Intelligence Creation"</td>
+<td></td>
+<td>57</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Company phone number", "Claim Intelligence Creation"</td>
+<td></td>
+<td>27</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Linked Organization Tab disable", "Claim Intelligence Creation"</td>
+<td></td>
+<td>72</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submit form with phone number alone under company record", "Claim Intelligence Creation"</td>
+<td></td>
+<td>56</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person fileds", "Claim Intelligence Creation"</td>
+<td></td>
+<td>22</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the update button under the Person Email filed", "Claim Intelligence Creation"</td>
+<td></td>
+<td>39</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+<tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the alert YES option under company", "Claim Intelligence Creation"</td>
+<td></td>
+<td>43</td>
+<td>com.runners.TestRunner@f6c03cb</td></tr>
+</table><p>
+</body>
+</html>
