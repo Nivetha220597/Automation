@@ -1,19 +1,25 @@
 trigger:
-  branches:
-    include:
-      - main
-      - automation-branch
+- automation-branch  # This will trigger the pipeline on this branch
 
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  system.debug: true  # Enable detailed debug logs for troubleshooting
+
 steps:
-- task: Maven@4
+- script: |
+    echo "Listing files to check the structure"
+    ls -R $(Build.SourcesDirectory)  # List all files recursively to confirm location of pom.xml
+  displayName: 'List files in repository'
+
+- task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'clean install'
-    options: '-Xmx3072m'
+    mavenPomFile: 'pom.xml'  # Path to pom.xml file located at the root of the repository
+    mavenOptions: '-Xmx3072m'  # Set maximum heap size
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '11'
+    jdkVersionOption: '11'  # Java version to use (11 in this case)
+    jdkArchitectureOption: 'x64'  # JDK architecture (64-bit in this case)
     publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'  # Path to test results for publishing JUnit results
+    goals: 'package'  # Maven goal (this can be changed to 'install' or 'clean install' based on your needs)
