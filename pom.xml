@@ -42,29 +42,9 @@
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-devtools</artifactId>
 			<version>4.0.0-rc-1</version>
-<<<<<<< HEAD
-=======
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-	<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.11.0</version>
-	</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-resources-plugin</artifactId>
-			<version>3.1.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-surefire-plugin</artifactId>
-			<version>3.0.0-M5</version>
->>>>>>> 1c43f4ae09ec7034586143661e570839f97d20e2
-		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
