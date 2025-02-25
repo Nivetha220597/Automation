@@ -1,0 +1,20 @@
+trigger:
+- automation-branch  # This will trigger the pipeline on this branch
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  system.debug: true  # Enable detailed debug logs for troubleshooting
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '11'  # Java version to use (11 in this case)
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
