@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-25T13:34:26 IST" name="Default suite" finished-at="2025-02-25T13:34:54 IST" duration-ms="28292">
+  <suite started-at="2025-02-25T13:41:16 IST" name="Default suite" finished-at="2025-02-25T13:42:40 IST" duration-ms="83674">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runners.TestRunner@6c8bca63]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runners.TestRunner@165b2f7f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-02-25T13:34:26 IST" name="Default test" finished-at="2025-02-25T13:34:54 IST" duration-ms="28292">
+    <test started-at="2025-02-25T13:41:16 IST" name="Default test" finished-at="2025-02-25T13:42:40 IST" duration-ms="83674">
       <class name="com.runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.runners.TestRunner@6c8bca63]" started-at="2025-02-25T13:34:26 IST" name="setUpClass" finished-at="2025-02-25T13:34:27 IST" duration-ms="562" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.runners.TestRunner@165b2f7f]" started-at="2025-02-25T13:41:16 IST" name="setUpClass" finished-at="2025-02-25T13:41:17 IST" duration-ms="485" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@16ea0f22]]>
+                <![CDATA[org.testng.TestRunner@1e8bccfb]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runCucumberTests()[pri:0, instance:com.runners.TestRunner@6c8bca63]" started-at="2025-02-25T13:34:27 IST" name="runCucumberTests" finished-at="2025-02-25T13:34:27 IST" duration-ms="4" status="PASS">
+        <test-method signature="runCucumberTests()[pri:0, instance:com.runners.TestRunner@165b2f7f]" started-at="2025-02-25T13:41:17 IST" name="runCucumberTests" finished-at="2025-02-25T13:41:17 IST" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runCucumberTests -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runners.TestRunner@6c8bca63]" started-at="2025-02-25T13:34:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-25T13:34:52 IST" duration-ms="25589" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runners.TestRunner@165b2f7f]" started-at="2025-02-25T13:41:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-25T13:42:38 IST" duration-ms="81331" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,33 +38,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.id: okta-signin-username (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.24'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\NIVETH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65035}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65035/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3f334d3bfe4256d610732b8edbea2e57]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: okta-signin-username (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.24'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\NIVETH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65035}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65035/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3f334d3bfe4256d610732b8edbea2e57
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at com.stepdefinitions.CreateInvestigationNegative.i_am_on_the_zodiac_login_page_for_create_intelligence_tc(CreateInvestigationNegative.java:56)
-at ✽.I am on the Zodiac login page for Create Intelligence TC(file:///C:/Users/NivethaElamaran/eclipse-workspace/ZodiacAutomation/src/test/resources/features/create_intelligence_negative.feature:522)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.runners.TestRunner@6c8bca63]" started-at="2025-02-25T13:34:52 IST" name="tearDownClass" finished-at="2025-02-25T13:34:54 IST" duration-ms="2059" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.runners.TestRunner@165b2f7f]" started-at="2025-02-25T13:42:38 IST" name="tearDownClass" finished-at="2025-02-25T13:42:40 IST" duration-ms="1812" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

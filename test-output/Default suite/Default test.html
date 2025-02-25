@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Feb 25 13:34:26 IST 2025</td>
+<td>Started on:</td><td>Tue Feb 25 13:41:16 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>28 seconds (28292 ms)</td>
+<tr><td>Total time:</td><td>83 seconds (83674 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,41 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Email valid under both company and person", "Claim Intelligence Creation"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: okta-signin-username (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.24&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\NIVETH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65035}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65035/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3f334d3bfe4256d610732b8edbea2e57
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.stepdefinitions.CreateInvestigationNegative.i_am_on_the_zodiac_login_page_for_create_intelligence_tc(CreateInvestigationNegative.java:56)
-	at ?.I am on the Zodiac login page for Create Intelligence TC(file:///C:/Users/NivethaElamaran/eclipse-workspace/ZodiacAutomation/src/test/resources/features/create_intelligence_negative.feature:522)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1590892341", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1590892341'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: okta-signin-username (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.24&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Users\NIVETH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65035}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65035/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3f334d3bfe4256d610732b8edbea2e57
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.stepdefinitions.CreateInvestigationNegative.i_am_on_the_zodiac_login_page_for_create_intelligence_tc(CreateInvestigationNegative.java:56)
-	at ?.I am on the Zodiac login page for Create Intelligence TC(file:///C:/Users/NivethaElamaran/eclipse-workspace/ZodiacAutomation/src/test/resources/features/create_intelligence_negative.feature:522)
-</pre></div></td>
-<td>25</td>
-<td>com.runners.TestRunner@6c8bca63</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -111,10 +76,15 @@ Session ID: 3f334d3bfe4256d610732b8edbea2e57
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='com.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Email valid under both company and person", "Claim Intelligence Creation"</td>
+<td></td>
+<td>81</td>
+<td>com.runners.TestRunner@165b2f7f</td></tr>
+<tr>
 <td title='com.runners.TestRunner.runCucumberTests()'><b>runCucumberTests</b><br>Test class: com.runners.TestRunner</td>
 <td></td>
 <td>0</td>
-<td>com.runners.TestRunner@6c8bca63</td></tr>
+<td>com.runners.TestRunner@165b2f7f</td></tr>
 </table><p>
 </body>
 </html>
