@@ -1,46 +1,49 @@
 trigger:
-- automation-branch  # Trigger pipeline for changes in this branch
+  branches:
+    include:
+      - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-latest' # Or you can change this to 'windows-latest' or 'macos-latest'
 
 variables:
-  system.debug: true  # Enable detailed logs for troubleshooting
+  chromedriver_version: '113.0.5672.63' # Update this to the version you need
+  selenium_version: '4.8.0' # Update this to the version you need
+  java_version: '11' # Adjust this as per your project requirements
+  maven_version: '3.8.4' # Adjust the Maven version as required
 
 steps:
-# Install dependencies, Chrome, and ChromeDriver with fallback
+# Install Java using apt (for Ubuntu-based images)
 - script: |
     sudo apt-get update
-    sudo apt-get install -y wget curl unzip
-    sudo apt-get install -y google-chrome-stable
-    # Retrieve the installed Chrome version
-    CHROME_VERSION=$(google-chrome-stable --version | sed 's/[^0-9]*//g')
+    sudo apt-get install openjdk-$(java_version)-jdk -y
+    java -version
+  displayName: 'Install Java $(java_version)'
 
-    # Try to download the corresponding version of ChromeDriver
-    DRIVER_URL="https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip"
-    wget --spider $DRIVER_URL
-    if [ $? -ne 0 ]; then
-      echo "ChromeDriver version for $CHROME_VERSION not found. Using fallback version."
-      DRIVER_URL="https://chromedriver.storage.googleapis.com/115.0.5790.170/chromedriver_linux64.zip"  # Fallback version
-    fi
+# Install Maven
+- script: |
+    wget https://archive.apache.org/dist/maven/maven-3/$(maven_version)/binaries/apache-maven-$(maven_version)-bin.tar.gz
+    tar -xvzf apache-maven-$(maven_version)-bin.tar.gz
+    sudo mv apache-maven-$(maven_version) /opt/maven
+    sudo ln -s /opt/maven/bin/mvn /usr/bin/mvn
+    mvn -version
+  displayName: 'Install Maven $(maven_version)'
 
-    echo "Downloading ChromeDriver from $DRIVER_URL"
-    wget $DRIVER_URL
-    unzip chromedriver_linux64.zip
+# Install the correct version of chromedriver
+- script: |
+    curl -sSL https://chromedriver.storage.googleapis.com/$(chromedriver_version)/chromedriver_linux64.zip -o chromedriver.zip
+    unzip chromedriver.zip
+    chmod +x chromedriver
     sudo mv chromedriver /usr/local/bin/
-    sudo chmod +x /usr/local/bin/chromedriver
-  displayName: 'Install Chrome and ChromeDriver'
+  displayName: 'Install Chromedriver'
 
-# Run Maven build and tests
-- task: Maven@3
+# Run the TestNG regression suite
+- script: mvn test -DsuiteXmlFile=testng-regression.xml
+  displayName: 'Run TestNG Regression Suite'
+
+# Archive test results
+- task: PublishTestResults@2
   inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '11'
-    jdkArchitectureOption: 'x64'
-    goals: 'clean test'
-    options: '-Dwebdriver.chrome.driver=/usr/local/bin/chromedriver'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    testRunTitle: 'Run Cucumber Tests'
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/target/test-*.xml'
+    testRunTitle: 'TestNG Regression Tests'
