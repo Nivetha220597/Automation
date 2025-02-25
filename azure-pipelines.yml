@@ -2,37 +2,45 @@ trigger:
 - automation-branch  # Trigger pipeline for changes in this branch
 
 pool:
-  vmImage: 'ubuntu-latest'  # You can adjust the OS image if needed
+  vmImage: 'ubuntu-latest'
 
 variables:
   system.debug: true  # Enable detailed logs for troubleshooting
 
 steps:
-# Install dependencies, Chrome, and ChromeDriver
+# Install dependencies, Chrome, and ChromeDriver with fallback
 - script: |
     sudo apt-get update
     sudo apt-get install -y wget curl unzip
     sudo apt-get install -y google-chrome-stable
-    # Download the appropriate version of ChromeDriver based on the installed Chrome version
+    # Retrieve the installed Chrome version
     CHROME_VERSION=$(google-chrome-stable --version | sed 's/[^0-9]*//g')
-    wget https://chromedriver.storage.googleapis.com/$(echo $CHROME_VERSION | cut -c1-3)/chromedriver_linux64.zip
+
+    # Try to download the corresponding version of ChromeDriver
+    DRIVER_URL="https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip"
+    wget --spider $DRIVER_URL
+    if [ $? -ne 0 ]; then
+      echo "ChromeDriver version for $CHROME_VERSION not found. Using fallback version."
+      DRIVER_URL="https://chromedriver.storage.googleapis.com/115.0.5790.170/chromedriver_linux64.zip"  # Fallback version
+    fi
+
+    echo "Downloading ChromeDriver from $DRIVER_URL"
+    wget $DRIVER_URL
     unzip chromedriver_linux64.zip
     sudo mv chromedriver /usr/local/bin/
     sudo chmod +x /usr/local/bin/chromedriver
   displayName: 'Install Chrome and ChromeDriver'
 
-# Run Maven build and tests (with headless configuration)
+# Run Maven build and tests
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '11'  # Specify your desired Java version
+    jdkVersionOption: '11'
     jdkArchitectureOption: 'x64'
     goals: 'clean test'
     options: '-Dwebdriver.chrome.driver=/usr/local/bin/chromedriver'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     testRunTitle: 'Run Cucumber Tests'
-
-# Optionally, add another step to collect test results or perform other actions
