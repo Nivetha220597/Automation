@@ -1,41 +1,38 @@
 trigger:
-- automation-branch  # This will trigger the pipeline on this branch
+- automation-branch  # Trigger pipeline for changes in this branch
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-latest'  # You can adjust the OS image if needed
 
 variables:
-  system.debug: true  # Enable detailed debug logs for troubleshooting
+  system.debug: true  # Enable detailed logs for troubleshooting
 
 steps:
-# Step 1: List all files to confirm the structure
+# Install dependencies, Chrome, and ChromeDriver
 - script: |
-    echo "Listing files to check the structure"
-    ls -R $(Build.SourcesDirectory)  # List all files recursively to confirm location of pom.xml
-  displayName: 'List files in repository'
+    sudo apt-get update
+    sudo apt-get install -y wget curl unzip
+    sudo apt-get install -y google-chrome-stable
+    # Download the appropriate version of ChromeDriver based on the installed Chrome version
+    CHROME_VERSION=$(google-chrome-stable --version | sed 's/[^0-9]*//g')
+    wget https://chromedriver.storage.googleapis.com/$(echo $CHROME_VERSION | cut -c1-3)/chromedriver_linux64.zip
+    unzip chromedriver_linux64.zip
+    sudo mv chromedriver /usr/local/bin/
+    sudo chmod +x /usr/local/bin/chromedriver
+  displayName: 'Install Chrome and ChromeDriver'
 
-# Step 2: Ensure the correct working directory is being used
-- script: |
-    echo "Current directory is: $(System.DefaultWorkingDirectory)"
-    ls -l $(System.DefaultWorkingDirectory)  # List files in the current working directory
-  displayName: 'Confirm working directory'
-
-# Step 3: Run Maven command to execute tests (TestRunner class)
+# Run Maven build and tests (with headless configuration)
 - task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'  # Path to pom.xml located at the root of the repository
-    mavenOptions: '-Xmx3072m'  # Set maximum heap size
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '11'  # Java version to use (11 in this case)
-    jdkArchitectureOption: 'x64'  # JDK architecture (64-bit in this case)
-    goals: 'clean test'  # Maven goal to clean and run the tests (TestNG based)
-    options: '-DsuiteXmlFile=testng-regression.xml'  # Changed to the custom testng-regression.xml file
+    jdkVersionOption: '11'  # Specify your desired Java version
+    jdkArchitectureOption: 'x64'
+    goals: 'clean test'
+    options: '-Dwebdriver.chrome.driver=/usr/local/bin/chromedriver'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    testRunTitle: 'Run Cucumber Tests'
 
-# Optional: Step to publish JUnit Test Results (if TestNG is configured with JUnit-compatible output)
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/target/cucumber-reports.xml'
-    mergeTestResults: true
-    testRunTitle: 'Cucumber Test Results'
-  displayName: 'Publish Test Results'
+# Optionally, add another step to collect test results or perform other actions
