@@ -3,6 +3,8 @@
     <test name="Claim Referral Tests">
         <classes>
             <class name="com.stepdefinitions.CreateInvestigationNegative"/>
+             <class name="com.stepdefinitions.ClaimReferallwithManageReferral"/>
+            
             <class name="com.runners.TestRunner"/>
         </classes>
     </test>

@@ -1,4 +1,4 @@
-@TestAll
+@Regression
 Feature: Claim Intelligence Creation
   As a user of Zodiac
   I want to create intelligence

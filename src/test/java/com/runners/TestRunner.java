@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
         "rerun:target/rerun.txt"
     },
     monochrome = true,
-tags = "@Test44" 
+tags = "@Regression" 
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
